@@ -70,7 +70,7 @@ class Troco {
         public PapelMoeda next() {
             PapelMoeda ret = null;
             for (int i = 6; i >= 0; i--) {
-                if (troco.papeisMoeda[i] != null) {
+                if (troco.papeisMoeda[i] != null) { //após remover uma condição do for, ele entra na condição 
                     ret = troco.papeisMoeda[i];
                     troco.papeisMoeda[i] = null;
                 }
