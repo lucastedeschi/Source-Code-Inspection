@@ -5,6 +5,7 @@
  */
 package br.calebe.ticketmachine.core;
 
+import br.calebe.ticketmachine.exception.PapelMoedaInvalidaException;
 import junit.framework.Assert;
 import org.junit.Test;
 
@@ -14,19 +15,22 @@ import org.junit.Test;
  */
 public class TicketMachineTest {
     
-    public void testInserir() {
+    public void testInserir() throws PapelMoedaInvalidaException {
         TicketMachine tm = new TicketMachine(5);
-        Assert.tm.getSaldo()
+        int aux = tm.getSaldo();
+        tm.inserir(10);
+        Assert.assertTrue(aux < tm.getSaldo());
     }
 
     public void testGetSaldo() {
         TicketMachine tm = new TicketMachine(10);
         Assert.assertEquals(0, tm.getSaldo());
+                
     }
 
     public void testImprimir() {
         TicketMachine tm = new TicketMachine(10);
-        Assert.assertEquals(null, null);
+        Assert.assertEquals("Saldo insuficiente!", "Saldo insuficiente!");
     }
 
 }
