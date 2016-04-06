@@ -5,6 +5,8 @@
  */
 package br.calebe.ticketmachine.core;
 
+import java.util.Iterator;
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -12,12 +14,12 @@ import org.junit.Test;
  * @author 41406133
  */
 public class TrocoTest {
-    
-    public TrocoTest() {
-    }
 
     @Test
-    public void testSomeMethod() {
+    public void testGetIterator() {
+        Troco troco = new Troco(10);
+        TrocoIterator ti = new TrocoIterator(troco);
+        Assert.assertEquals(ti, troco.getIterator());
     }
     
 }
